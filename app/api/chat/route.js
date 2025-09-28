@@ -80,10 +80,10 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+const text = await run();
+
 export async function POST(req) {
   try {
-    const text = await run();
-
     const { question } = await req.json();
 
     const response = await openai.chat.completions.create({

@@ -1,7 +1,14 @@
 // app/components/ChatbotifyClient.tsx
 "use client";
 
-import ChatBot from "react-chatbotify";
+import dynamic from "next/dynamic";
+
+const ChatBot = dynamic(
+  () => import("react-chatbotify").then((m) => m.default),
+  {
+    ssr: false,
+  }
+);
 
 export default function ChatbotifyClient() {
   const askQuestion = async (question: string) => {
@@ -20,20 +27,14 @@ export default function ChatbotifyClient() {
   const flow = {
     start: {
       message: "Hey, How can I help you are you?",
-      chatDisabled: false,
       path: "end",
     },
-    startAgain: {
-      message: "Anything else?",
-      chatDisabled: false,
-      path: "end",
-    },
+
     end: {
       message: async (param: { userInput: string }) => {
         return await askQuestion(param.userInput!);
       },
-      chatDisabled: false,
-      path: "startAgain",
+      path: "start",
     },
   };
 
