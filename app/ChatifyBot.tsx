@@ -20,10 +20,12 @@ export default function ChatbotifyClient() {
   const flow = {
     start: {
       message: "Hey, How can I help you are you?",
+      chatDisabled: false,
       path: "end",
     },
     startAgain: {
       message: "Anything else?",
+      chatDisabled: false,
       path: "end",
     },
     end: {
