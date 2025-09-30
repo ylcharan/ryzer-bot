@@ -12,13 +12,14 @@
     "@langchain/core": "^0.3.77",
     "@langchain/pinecone": "^0.2.0",
     "@pinecone-database/pinecone": "^5.1.2",
+    "chrome-aws-lambda": "^10.1.0",
     "dotenv": "^17.2.2",
     "langchain": "^0.3.34",
     "next": "15.5.4",
     "openai": "^5.23.1",
     "puppeteer": "^24.22.3",
+    "puppeteer-core": "^24.22.3",
     "react": "19.1.0",
-    "react-chatbotify": "^2.3.2",
     "react-dom": "19.1.0"
   },
   "devDependencies": {
