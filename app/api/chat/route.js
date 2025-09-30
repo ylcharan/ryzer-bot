@@ -94,7 +94,10 @@ export async function POST(req) {
           role: "user",
           content: `
 You are a ChatBot assistant for FAQs, factual assistant. Use ONLY the context to answer.
-If the answer is not in the context, say you don't know.
+If the answer is not in the context, say you don't know politely.
+If the question is not related to the context, politely inform them that you are tuned to only answer questions related to the context.
+If the question is not clear, ask for clarification.
+If the question is way of greeting, respond in a friendly manner.
 
 Question:
 ${question}
